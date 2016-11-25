@@ -1,5 +1,10 @@
-.main {
+main {
     text-align: center;
-    border: 2px solid black;
-    
+    border: 2px solid white;
+    color: white;
+    padding-bottom: 0.7vw;
+}
+
+body {
+    background-color: black;
 }
