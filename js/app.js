@@ -6,22 +6,28 @@ $(function(){
       console.log("button clicked");
     });
 
-    //assigning a random number to the computer choice variable
-    var computerChoice = Math.random();
-    console.log("computer choice is: "+computerChoice);
+   
+    
 
     //checking the computer's choice.
     //the rule is 'rock' between 0 and 0.34, 'paper' between 0.34 and 0.67, 'sciccors' between 0.67 and 1
-     if ( computerChoice < 0.34) {
-         computerChoice = "rock";
-         console.log("computerChoice is "+computerChoice);
-     } else if (computerChoice < 0.67){
-         computerChoice = "paper";
-         console.log("computerChoice is "+computerChoice);
-        } else {
-            computerChoice = "scissors";
-            console.log("computerChoice is "+computerChoice);
-        }
+    function choiceComputer(){
+             //assigning a random number to the computer choice variable
+            var computerChoice = Math.random();
+            console.log("computer choice is: "+computerChoice);
+            //setting the rules for the computer's choice variable
+            if ( computerChoice < 0.34) {
+                computerChoice = "rock";
+                console.log("computerChoice is "+computerChoice);
+            } else if (computerChoice < 0.67){
+                computerChoice = "paper";
+                console.log("computerChoice is "+computerChoice);
+                } else {
+                    computerChoice = "scissors";
+                    console.log("computerChoice is "+computerChoice);
+                }
+            return computerChoice;
+    }
 
     //setting up the user choice to be read from the buttons event listener
     var userChoice;
@@ -33,13 +39,13 @@ $(function(){
             userChoice = this.id.substring(0, this.id.length); //assigning the user chioce to a variable
             console.log("this is user choice: "+userChoice);
              //calling the compareChoice function
-            compareChoice(computerChoice,userChoice);
+            compareChoice(userChoice);
         });
     }
     
     //creating a function to check the userChoice and the computerChoice
-    function compareChoice(choiceComputer,choiceUser){
-        let choice1 = String(choiceComputer);
+    function compareChoice(choiceUser){
+        let choice1 = choiceComputer();
         let choice2 = String(choiceUser);
         console.log(choice1+" "+choice2);
         // switch (choice1,choice2){
