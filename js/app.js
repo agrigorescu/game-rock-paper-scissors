@@ -42,38 +42,72 @@ $(function(){
         let choice1 = String(choiceComputer);
         let choice2 = String(choiceUser);
         console.log(choice1+" "+choice2);
-        switch (choice1,choice2){
-            case choice1===choice2 : 
-                    console.log("it's a tie");
-                    break;
-            case choice1==='rock' && choice2==='scissors':
-                    console.log("rock wins. computer wins");
+        // switch (choice1,choice2){
+        //     case choice1===choice2 : 
+        //             console.log("it's a tie");
+        //             break;
+        //     case choice1==='rock' && choice2==='scissors':
+        //             console.log("rock wins. computer wins");
+        //             $("#ccount").html(parseInt($("#ccount").html())+1);
+        //             break;
+        //     case choice1==='rock' && choice2==='paper':
+        //             console.log("paper wins. user wins");
+        //             $("#count").html(parseInt($("#count").html())+1);
+        //             break;
+        //     case choice1==='paper' && choice2==='scissors':
+        //             console.log("scissors wins. user wins");
+        //             $("#count").html(parseInt($("#count").html())+1);
+        //             break;
+        //     case choice1==='paper' && choice2==='rock':
+        //             console.log("paper wins. computer wins");
+        //             $("#ccount").html(parseInt($("#ccount").html())+1);
+        //             break;
+        //     case choice1==='scissors' && choice2==='rock':
+        //             console.log("rock wins.user wins");
+        //             $("#count").html(parseInt($("#count").html())+1);
+        //             break;
+        //     case choice1==='scissors' && choice2==='paper':
+        //             console.log("scissors wins.computer wins");
+        //             $("#ccount").html(parseInt($("#ccount").html())+1);
+        //             break;
+        //     default:
+        //             console.log("something went wrong");
+        // } 
+
+        if (choice1===choice2){
+        console.log("The result is a tie!");
+        } else {
+            if(choice1==="rock") {
+                if(choice2==="scissors") {
+                    console.log("rock wins");
                     $("#ccount").html(parseInt($("#ccount").html())+1);
-                    break;
-            case choice1==='rock' && choice2==='paper':
-                    console.log("paper wins. user wins");
+                } else {
+                    console.log("paper wins");
                     $("#count").html(parseInt($("#count").html())+1);
-                    break;
-            case choice1==='paper' && choice2==='scissors':
-                    console.log("scissors wins. user wins");
-                    $("#count").html(parseInt($("#count").html())+1);
-                    break;
-            case choice1==='paper' && choice2==='rock':
-                    console.log("paper wins. computer wins");
-                    $("#ccount").html(parseInt($("#ccount").html())+1);
-                    break;
-            case choice1==='scissors' && choice2==='rock':
-                    console.log("rock wins.user wins");
-                    $("#count").html(parseInt($("#count").html())+1);
-                    break;
-            case choice1==='scissors' && choice2==='paper':
-                    console.log("scissors wins.computer wins");
-                    $("#ccount").html(parseInt($("#ccount").html())+1);
-                    break;
-            default:
-                    console.log("something went wrong");
+                }
+            }else {
+                if(choice1==="paper") {
+                    if(choice2==="rock") {
+                        console.log("paper wins");
+                        $("#ccount").html(parseInt($("#ccount").html())+1);
+                    } else {
+                        console.log("scissors wins");
+                        $("#count").html(parseInt($("#count").html())+1);
+                    }
+                } else {
+                    if(choice1==="scissors") {
+                        if(choice2==="rock") {
+                            console.log("rock wins");
+                            $("#count").html(parseInt($("#count").html())+1);
+                        } else {
+                            console.log("scissors wins");
+                            $("#ccount").html(parseInt($("#ccount").html())+1);
+                        }
+                    }
+                }
+            }
         } 
-    } 
+    }
 });
 
 
