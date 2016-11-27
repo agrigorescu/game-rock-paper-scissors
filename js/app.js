@@ -1,14 +1,6 @@
 $(function(){
     console.log("the dom is ready");
 
-    //adding an event listener
-    $(".myButtons").on("click", function(){
-      console.log("button clicked");
-    });
-
-   
-    
-
     //checking the computer's choice.
     //the rule is 'rock' between 0 and 0.34, 'paper' between 0.34 and 0.67, 'sciccors' between 0.67 and 1
     function choiceComputer(){
@@ -48,38 +40,6 @@ $(function(){
         let choice1 = choiceComputer();
         let choice2 = String(choiceUser);
         console.log(choice1+" "+choice2);
-        // switch (choice1,choice2){
-        //     case choice1===choice2 : 
-        //             console.log("it's a tie");
-        //             break;
-        //     case choice1==='rock' && choice2==='scissors':
-        //             console.log("rock wins. computer wins");
-        //             $("#ccount").html(parseInt($("#ccount").html())+1);
-        //             break;
-        //     case choice1==='rock' && choice2==='paper':
-        //             console.log("paper wins. user wins");
-        //             $("#count").html(parseInt($("#count").html())+1);
-        //             break;
-        //     case choice1==='paper' && choice2==='scissors':
-        //             console.log("scissors wins. user wins");
-        //             $("#count").html(parseInt($("#count").html())+1);
-        //             break;
-        //     case choice1==='paper' && choice2==='rock':
-        //             console.log("paper wins. computer wins");
-        //             $("#ccount").html(parseInt($("#ccount").html())+1);
-        //             break;
-        //     case choice1==='scissors' && choice2==='rock':
-        //             console.log("rock wins.user wins");
-        //             $("#count").html(parseInt($("#count").html())+1);
-        //             break;
-        //     case choice1==='scissors' && choice2==='paper':
-        //             console.log("scissors wins.computer wins");
-        //             $("#ccount").html(parseInt($("#ccount").html())+1);
-        //             break;
-        //     default:
-        //             console.log("something went wrong");
-        // } 
-
         if (choice1===choice2){
         console.log("The result is a tie!");
         } else {
