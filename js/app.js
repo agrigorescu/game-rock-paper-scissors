@@ -6,17 +6,13 @@ $(function(){
     function choiceComputer(){
              //assigning a random number to the computer choice variable
             var computerChoice = Math.random();
-            console.log("computer choice is: "+computerChoice);
             //setting the rules for the computer's choice variable
             if ( computerChoice < 0.34) {
                 computerChoice = "rock";
-                console.log("computerChoice is "+computerChoice);
             } else if (computerChoice < 0.67){
                 computerChoice = "paper";
-                console.log("computerChoice is "+computerChoice);
                 } else {
                     computerChoice = "scissors";
-                    console.log("computerChoice is "+computerChoice);
                 }
             return computerChoice;
     }
@@ -27,9 +23,7 @@ $(function(){
     for (var i = 0; i < userChoose.length; i++) {
         var button = userChoose[i];
         button.addEventListener('click' , function(event) {
-            console.log(this.id + ' was clicked'); // this always refers to the button that was clicked
             userChoice = this.id.substring(0, this.id.length); //assigning the user chioce to a variable
-            console.log("this is user choice: "+userChoice);
              //calling the compareChoice function
             compareChoice(userChoice);
         });
@@ -39,35 +33,34 @@ $(function(){
     function compareChoice(choiceUser){
         let choice1 = choiceComputer();
         let choice2 = String(choiceUser);
-        console.log(choice1+" "+choice2);
         if (choice1===choice2){
-        console.log("The result is a tie!");
+        $("#winner").html("IT'S A TIE");
         } else {
             if(choice1==="rock") {
                 if(choice2==="scissors") {
-                    console.log("rock wins");
                     $("#ccount").html(parseInt($("#ccount").html())+1);
+                    $("#winner").html("Computer");
                 } else {
-                    console.log("paper wins");
                     $("#count").html(parseInt($("#count").html())+1);
+                    $("#winner").html("Human");
                 }
             }else {
                 if(choice1==="paper") {
                     if(choice2==="rock") {
-                        console.log("paper wins");
                         $("#ccount").html(parseInt($("#ccount").html())+1);
+                        $("#winner").html("Computer");
                     } else {
-                        console.log("scissors wins");
                         $("#count").html(parseInt($("#count").html())+1);
+                        $("#winner").html("Human");
                     }
                 } else {
                     if(choice1==="scissors") {
                         if(choice2==="rock") {
-                            console.log("rock wins");
                             $("#count").html(parseInt($("#count").html())+1);
+                            $("#winner").html("Human");
                         } else {
-                            console.log("scissors wins");
                             $("#ccount").html(parseInt($("#ccount").html())+1);
+                            $("#winner").html("Computer");
                         }
                     }
                 }
@@ -75,5 +68,3 @@ $(function(){
         } 
     }
 });
-
-
